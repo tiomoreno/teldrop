@@ -2,6 +2,8 @@
 name = "rustgram"
 version = "0.1.0"
 edition = "2021"
+description = "Telegram channel and chat downloader — TUI and CLI"
+homepage = "https://github.com/tiomoreno/rustgram"
 repository = "https://github.com/tiomoreno/rustgram"
 
 [[bin]]

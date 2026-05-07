@@ -14,6 +14,19 @@ Telegram channel and chat downloader written in Rust. Supports an interactive TU
 
 ## Installation
 
+### macOS — Homebrew
+
+```bash
+brew install tiomoreno/tap/rustgram
+```
+
+Or tap first, then install:
+
+```bash
+brew tap tiomoreno/tap
+brew install rustgram
+```
+
 ### macOS / Linux — shell installer
 
 ```bash
