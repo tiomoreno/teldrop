@@ -27,3 +27,17 @@ crossterm = "0.28"
 [profile.dist]
 inherits = "release"
 lto = "thin"
+
+[package.metadata.deb]
+section = "utils"
+priority = "optional"
+assets = [
+  ["target/release/rustgram", "usr/bin/rustgram", "755"],
+  ["README.md", "usr/share/doc/rustgram/README.md", "644"],
+]
+
+[package.metadata.generate-rpm]
+assets = [
+  { source = "target/release/rustgram", dest = "/usr/bin/rustgram", mode = "755" },
+  { source = "README.md", dest = "/usr/share/doc/rustgram/README.md", mode = "644" },
+]
