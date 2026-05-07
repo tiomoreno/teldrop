@@ -1,4 +1,6 @@
-# teldrop
+<p align="center">
+  <img src="assets/banner.svg" alt="teldrop" width="800"/>
+</p>
 
 Telegram channel and chat downloader written in Rust. Supports an interactive TUI and a conventional CLI suitable for scripts and automation.
 

@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="180" viewBox="0 0 800 180">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0D1117"/>
+      <stop offset="100%" stop-color="#161B22"/>
+    </linearGradient>
+    <linearGradient id="iconGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#34B7F1"/>
+      <stop offset="100%" stop-color="#1A8BC8"/>
+    </linearGradient>
+    <linearGradient id="rustAccent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#CE422B"/>
+      <stop offset="100%" stop-color="#E07B54"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="180" rx="14" fill="url(#bg)"/>
+  <rect width="800" height="180" rx="14" fill="none" stroke="#21262D" stroke-width="1.5"/>
+
+  <!-- Left accent bar -->
+  <rect x="0" y="0" width="5" height="180" rx="2.5" fill="url(#iconGrad)"/>
+
+  <!-- Icon: rounded square -->
+  <rect x="44" y="34" width="112" height="112" rx="24" fill="url(#iconGrad)"/>
+
+  <!-- Download arrow icon (centered in square at 100,90) -->
+  <!-- Vertical line of arrow -->
+  <line x1="100" y1="60" x2="100" y2="108" stroke="white" stroke-width="11" stroke-linecap="round"/>
+  <!-- Arrowhead -->
+  <polyline points="76,90 100,114 124,90" stroke="white" stroke-width="11" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <!-- Bottom bar -->
+  <line x1="74" y1="130" x2="126" y2="130" stroke="white" stroke-width="11" stroke-linecap="round"/>
+
+  <!-- Title -->
+  <text x="182" y="96" font-family="'SF Mono','Fira Code','Cascadia Code','Consolas',monospace" font-size="66" font-weight="700" fill="#FFFFFF" letter-spacing="-1">teldrop</text>
+
+  <!-- Rust orange underline accent -->
+  <rect x="183" y="108" width="290" height="4" rx="2" fill="url(#rustAccent)" opacity="0.85"/>
+
+  <!-- Subtitle -->
+  <text x="184" y="140" font-family="'SF Pro Display','Segoe UI','Helvetica Neue',sans-serif" font-size="19" fill="#8B949E" letter-spacing="0.3">Telegram downloader · Rust · TUI + CLI</text>
+
+  <!-- Right side: terminal snippet -->
+  <rect x="535" y="34" width="230" height="112" rx="10" fill="#010409" opacity="0.7"/>
+  <rect x="535" y="34" width="230" height="112" rx="10" fill="none" stroke="#30363D" stroke-width="1"/>
+  <!-- Terminal dots -->
+  <circle cx="553" cy="52" r="5" fill="#FF5F57"/>
+  <circle cx="569" cy="52" r="5" fill="#FEBC2E"/>
+  <circle cx="585" cy="52" r="5" fill="#28C840"/>
+  <!-- Terminal lines -->
+  <text x="548" y="80" font-family="'SF Mono','Fira Code','Cascadia Code',monospace" font-size="12.5" fill="#3FB950">$ teldrop download @channel</text>
+  <text x="548" y="99" font-family="'SF Mono','Fira Code','Cascadia Code',monospace" font-size="12.5" fill="#58A6FF">  ↓ Fetching messages…</text>
+  <text x="548" y="118" font-family="'SF Mono','Fira Code','Cascadia Code',monospace" font-size="12.5" fill="#8B949E">  ██████░░░░  60%</text>
+  <text x="548" y="137" font-family="'SF Mono','Fira Code','Cascadia Code',monospace" font-size="12.5" fill="#3FB950">  ✓ 128 files saved</text>
+</svg>
