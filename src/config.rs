@@ -14,7 +14,7 @@ impl Config {
     pub fn dir() -> Result<PathBuf> {
         let dir = dirs::config_dir()
             .context("Could not determine config directory")?
-            .join("rustgram");
+            .join("teldrop");
         fs::create_dir_all(&dir).context("Failed to create config directory")?;
         Ok(dir)
     }

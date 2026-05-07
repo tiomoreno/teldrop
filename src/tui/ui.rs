@@ -8,7 +8,7 @@ use ratatui::{
 
 use super::app::{App, DlState, Screen};
 
-const BRAND: &str = " rustgram ";
+const BRAND: &str = " teldrop ";
 const ACCENT: Color = Color::Cyan;
 const DIM: Color = Color::DarkGray;
 const ERR: Color = Color::Red;
@@ -267,7 +267,7 @@ fn render_download_config(f: &mut Frame, app: &App, area: Rect) {
     let output_path = app.output_dir.as_ref().map(|p| p.display().to_string()).unwrap_or_else(|| {
         let base = dirs::download_dir()
             .unwrap_or_else(|| std::path::PathBuf::from("."));
-        base.join("rustgram")
+        base.join("teldrop")
             .join(crate::media::sanitize_name(&chat.name))
             .display()
             .to_string()

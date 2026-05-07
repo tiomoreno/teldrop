@@ -1,4 +1,4 @@
-# rustgram
+# teldrop
 
 Telegram channel and chat downloader written in Rust. Supports an interactive TUI and a conventional CLI suitable for scripts and automation.
 
@@ -17,63 +17,63 @@ Telegram channel and chat downloader written in Rust. Supports an interactive TU
 ### macOS — Homebrew
 
 ```bash
-brew install tiomoreno/tap/rustgram
+brew install tiomoreno/tap/teldrop
 ```
 
 Or tap first, then install:
 
 ```bash
 brew tap tiomoreno/tap
-brew install rustgram
+brew install teldrop
 ```
 
 ### macOS / Linux — shell installer
 
 ```bash
-curl --proto '=https' --tlsv1.2 -LsSf https://github.com/tiomoreno/rustgram/releases/latest/download/rustgram-installer.sh | sh
+curl --proto '=https' --tlsv1.2 -LsSf https://github.com/tiomoreno/teldrop/releases/latest/download/teldrop-installer.sh | sh
 ```
 
 ### Windows — PowerShell installer
 
 ```powershell
-powershell -c "irm https://github.com/tiomoreno/rustgram/releases/latest/download/rustgram-installer.ps1 | iex"
+powershell -c "irm https://github.com/tiomoreno/teldrop/releases/latest/download/teldrop-installer.ps1 | iex"
 ```
 
 ### Debian / Ubuntu — `.deb`
 
 ```bash
 # x86_64
-curl -LO https://github.com/tiomoreno/rustgram/releases/latest/download/rustgram_x86_64.deb
-sudo dpkg -i rustgram_x86_64.deb
+curl -LO https://github.com/tiomoreno/teldrop/releases/latest/download/teldrop_x86_64.deb
+sudo dpkg -i teldrop_x86_64.deb
 
 # arm64
-curl -LO https://github.com/tiomoreno/rustgram/releases/latest/download/rustgram_aarch64.deb
-sudo dpkg -i rustgram_aarch64.deb
+curl -LO https://github.com/tiomoreno/teldrop/releases/latest/download/teldrop_aarch64.deb
+sudo dpkg -i teldrop_aarch64.deb
 ```
 
 ### Fedora / RHEL / openSUSE — `.rpm`
 
 ```bash
 # x86_64
-sudo rpm -i https://github.com/tiomoreno/rustgram/releases/latest/download/rustgram_x86_64.rpm
+sudo rpm -i https://github.com/tiomoreno/teldrop/releases/latest/download/teldrop_x86_64.rpm
 
 # aarch64
-sudo rpm -i https://github.com/tiomoreno/rustgram/releases/latest/download/rustgram_aarch64.rpm
+sudo rpm -i https://github.com/tiomoreno/teldrop/releases/latest/download/teldrop_aarch64.rpm
 ```
 
 ### Via Cargo
 
 ```bash
-cargo install --git https://github.com/tiomoreno/rustgram
+cargo install --git https://github.com/tiomoreno/teldrop
 ```
 
 ### Build from source
 
 ```bash
-git clone https://github.com/tiomoreno/rustgram
-cd rustgram
+git clone https://github.com/tiomoreno/teldrop
+cd teldrop
 cargo build --release
-# binary at ./target/release/rustgram
+# binary at ./target/release/teldrop
 ```
 
 ## Setup
@@ -84,7 +84,7 @@ You need Telegram API credentials from [my.telegram.org](https://my.telegram.org
 2. Go to **API development tools**
 3. Create an app and copy **App api_id** and **App api_hash**
 
-Credentials are stored in `~/.config/rustgram/config.toml` after the first prompt, or set them as environment variables:
+Credentials are stored in `~/.config/teldrop/config.toml` after the first prompt, or set them as environment variables:
 
 ```bash
 export TG_API_ID=12345678
@@ -96,13 +96,13 @@ export TG_API_HASH=abcdef1234567890abcdef1234567890
 ### TUI (interactive)
 
 ```bash
-rustgram tui
+teldrop tui
 ```
 
 Navigate with arrow keys, `/` to filter, `Enter` to select, `t` to cycle media type, `Esc` to go back.
 
 ```
-╭─ rustgram ──────────────────────────── chats ─╮
+╭─ teldrop ──────────────────────────── chats ─╮
 │ Filter: /rust_                                │
 ├───────────────────────────────────────────────┤
 │ ▶ Channel  Rust Advanced + Beginner           │
@@ -118,15 +118,15 @@ Navigate with arrow keys, `/` to filter, `Enter` to select, `t` to cycle media t
 #### Authenticate
 
 ```bash
-rustgram login
+teldrop login
 ```
 
-Prompts for phone number, sends OTP, handles 2FA if enabled. Session is saved to `~/.config/rustgram/session.session`.
+Prompts for phone number, sends OTP, handles 2FA if enabled. Session is saved to `~/.config/teldrop/session.session`.
 
 #### Logout
 
 ```bash
-rustgram logout
+teldrop logout
 ```
 
 Removes the saved session file.
@@ -134,8 +134,8 @@ Removes the saved session file.
 #### List chats
 
 ```bash
-rustgram chats
-rustgram chats --filter rust
+teldrop chats
+teldrop chats --filter rust
 ```
 
 Prints all dialogs (private chats, groups, channels) with their numeric IDs.
@@ -152,26 +152,26 @@ Private              123456789       John Doe
 
 ```bash
 # By username
-rustgram download channelname
+teldrop download channelname
 
-# By numeric ID (from `rustgram chats`)
-rustgram download 1879988768
+# By numeric ID (from `teldrop chats`)
+teldrop download 1879988768
 
 # Filter: only videos, custom output dir
-rustgram download @channelname --media-type video --output ~/Videos/rust
+teldrop download @channelname --media-type video --output ~/Videos/rust
 
 # Limit scan to last 500 messages
-rustgram download 1879988768 --limit 500
+teldrop download 1879988768 --limit 500
 
 # Search filter (client-side text match)
-rustgram download 1879988768 --query "lecture"
+teldrop download 1879988768 --query "lecture"
 ```
 
 **Options:**
 
 | Flag | Default | Description |
 |---|---|---|
-| `--output`, `-o` | `~/Downloads/rustgram/<chat>/` | Output directory |
+| `--output`, `-o` | `~/Downloads/teldrop/<chat>/` | Output directory |
 | `--media-type`, `-t` | `all` | `all`, `photo`, `video`, `document`, `audio` |
 | `--limit`, `-l` | unlimited | Max messages to scan |
 | `--query`, `-q` | — | Client-side text filter |
@@ -179,14 +179,14 @@ rustgram download 1879988768 --query "lecture"
 
 ## Configuration
 
-`~/.config/rustgram/config.toml`:
+`~/.config/teldrop/config.toml`:
 
 ```toml
 api_id = 12345678
 api_hash = "abcdef1234567890abcdef1234567890"
 ```
 
-Session file: `~/.config/rustgram/session.session`
+Session file: `~/.config/teldrop/session.session`
 
 Both paths are resolved via the OS config directory (`$XDG_CONFIG_HOME` on Linux, `~/Library/Application Support` on macOS).
 
@@ -199,10 +199,10 @@ src/
 ├── telegram.rs          # Client connection and session helpers
 ├── media.rs             # Shared media utilities (filter, filename, size)
 ├── commands/
-│   ├── login.rs         # `rustgram login`
-│   ├── logout.rs        # `rustgram logout`
-│   ├── chats.rs         # `rustgram chats`
-│   └── download.rs      # `rustgram download`
+│   ├── login.rs         # `teldrop login`
+│   ├── logout.rs        # `teldrop logout`
+│   ├── chats.rs         # `teldrop chats`
+│   └── download.rs      # `teldrop download`
 └── tui/
     ├── mod.rs           # Terminal setup and event loop
     ├── app.rs           # App state machine + async event handling

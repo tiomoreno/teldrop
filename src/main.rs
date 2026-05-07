@@ -10,7 +10,7 @@ mod tui;
 
 #[derive(Parser)]
 #[command(
-    name = "rustgram",
+    name = "teldrop",
     version,
     about = "Telegram channel/chat downloader\n\nRun without arguments or use `tui` for the interactive interface.\nAll other subcommands work as a conventional CLI (suitable for scripts and skills)."
 )]
@@ -42,7 +42,7 @@ enum Commands {
         /// Chat username (e.g. channelname or @channelname) or numeric chat ID
         chat: String,
 
-        /// Output directory [default: ~/Downloads/rustgram/<chat_name>]
+        /// Output directory [default: ~/Downloads/teldrop/<chat_name>]
         #[arg(short, long)]
         output: Option<PathBuf>,
 

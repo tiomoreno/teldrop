@@ -30,7 +30,7 @@ pub async fn run(
         None => {
             let downloads = dirs::download_dir().unwrap_or_else(|| PathBuf::from("."));
             downloads
-                .join("rustgram")
+                .join("teldrop")
                 .join(media::sanitize_name(&chat_name))
         }
     };

@@ -1,13 +1,13 @@
 [package]
-name = "rustgram"
+name = "teldrop"
 version = "0.1.0"
 edition = "2021"
 description = "Telegram channel and chat downloader — TUI and CLI"
-homepage = "https://github.com/tiomoreno/rustgram"
-repository = "https://github.com/tiomoreno/rustgram"
+homepage = "https://github.com/tiomoreno/teldrop"
+repository = "https://github.com/tiomoreno/teldrop"
 
 [[bin]]
-name = "rustgram"
+name = "teldrop"
 path = "src/main.rs"
 
 [dependencies]
@@ -34,12 +34,12 @@ lto = "thin"
 section = "utils"
 priority = "optional"
 assets = [
-  ["target/release/rustgram", "usr/bin/rustgram", "755"],
-  ["README.md", "usr/share/doc/rustgram/README.md", "644"],
+  ["target/release/teldrop", "usr/bin/teldrop", "755"],
+  ["README.md", "usr/share/doc/teldrop/README.md", "644"],
 ]
 
 [package.metadata.generate-rpm]
 assets = [
-  { source = "target/release/rustgram", dest = "/usr/bin/rustgram", mode = "755" },
-  { source = "README.md", dest = "/usr/share/doc/rustgram/README.md", mode = "644" },
+  { source = "target/release/teldrop", dest = "/usr/bin/teldrop", mode = "755" },
+  { source = "README.md", dest = "/usr/share/doc/teldrop/README.md", mode = "644" },
 ]

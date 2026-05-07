@@ -52,7 +52,7 @@ jobs:
       - name: Copy binary to expected location (cargo-deb/rpm need target/release/)
         run: |
           mkdir -p target/release
-          cp target/${{ matrix.target }}/release/rustgram target/release/rustgram
+          cp target/${{ matrix.target }}/release/teldrop target/release/teldrop
 
       - name: Build .deb
         run: cargo deb --no-build --target ${{ matrix.target }}

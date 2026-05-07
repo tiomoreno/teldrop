@@ -1325,25 +1325,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "rustgram"
-version = "0.1.0"
-dependencies = [
- "anyhow",
- "clap",
- "crossterm",
- "dialoguer",
- "dirs",
- "futures-util",
- "grammers-client",
- "humansize",
- "indicatif",
- "ratatui",
- "serde",
- "tokio",
- "toml",
-]
-
-[[package]]
 name = "rustix"
 version = "0.38.44"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1587,6 +1568,25 @@ dependencies = [
  "proc-macro2",
  "quote",
  "unicode-ident",
+]
+
+[[package]]
+name = "teldrop"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "clap",
+ "crossterm",
+ "dialoguer",
+ "dirs",
+ "futures-util",
+ "grammers-client",
+ "humansize",
+ "indicatif",
+ "ratatui",
+ "serde",
+ "tokio",
+ "toml",
 ]
 
 [[package]]

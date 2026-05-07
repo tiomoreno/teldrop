@@ -261,7 +261,7 @@ impl App {
         let output_dir = self.output_dir.clone().unwrap_or_else(|| {
             dirs::download_dir()
                 .unwrap_or_else(|| PathBuf::from("."))
-                .join("rustgram")
+                .join("teldrop")
                 .join(media::sanitize_name(&chat_name))
         });
 

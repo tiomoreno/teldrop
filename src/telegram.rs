@@ -32,7 +32,7 @@ pub fn save_session(client: &Client) -> Result<()> {
 
 pub async fn require_auth(client: &Client) -> Result<()> {
     if !client.is_authorized().await? {
-        bail!("Not logged in. Run `rustgram login` first.");
+        bail!("Not logged in. Run `teldrop login` first.");
     }
     Ok(())
 }
