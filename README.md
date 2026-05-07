@@ -14,17 +14,53 @@ Telegram channel and chat downloader written in Rust. Supports an interactive TU
 
 ## Installation
 
+### macOS / Linux — shell installer
+
 ```bash
-git clone https://github.com/youruser/rustgram
+curl --proto '=https' --tlsv1.2 -LsSf https://github.com/tiomoreno/rustgram/releases/latest/download/rustgram-installer.sh | sh
+```
+
+### Windows — PowerShell installer
+
+```powershell
+powershell -c "irm https://github.com/tiomoreno/rustgram/releases/latest/download/rustgram-installer.ps1 | iex"
+```
+
+### Debian / Ubuntu — `.deb`
+
+```bash
+# x86_64
+curl -LO https://github.com/tiomoreno/rustgram/releases/latest/download/rustgram_x86_64.deb
+sudo dpkg -i rustgram_x86_64.deb
+
+# arm64
+curl -LO https://github.com/tiomoreno/rustgram/releases/latest/download/rustgram_aarch64.deb
+sudo dpkg -i rustgram_aarch64.deb
+```
+
+### Fedora / RHEL / openSUSE — `.rpm`
+
+```bash
+# x86_64
+sudo rpm -i https://github.com/tiomoreno/rustgram/releases/latest/download/rustgram_x86_64.rpm
+
+# aarch64
+sudo rpm -i https://github.com/tiomoreno/rustgram/releases/latest/download/rustgram_aarch64.rpm
+```
+
+### Via Cargo
+
+```bash
+cargo install --git https://github.com/tiomoreno/rustgram
+```
+
+### Build from source
+
+```bash
+git clone https://github.com/tiomoreno/rustgram
 cd rustgram
 cargo build --release
 # binary at ./target/release/rustgram
-```
-
-Or install directly:
-
-```bash
-cargo install --path .
 ```
 
 ## Setup
