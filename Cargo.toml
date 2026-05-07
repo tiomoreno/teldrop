@@ -1,0 +1,23 @@
+[package]
+name = "rustgram"
+version = "0.1.0"
+edition = "2021"
+
+[[bin]]
+name = "rustgram"
+path = "src/main.rs"
+
+[dependencies]
+grammers-client = "0.7"
+tokio = { version = "1", features = ["full"] }
+clap = { version = "4", features = ["derive"] }
+anyhow = "1"
+serde = { version = "1", features = ["derive"] }
+toml = "0.8"
+dirs = "5"
+dialoguer = { version = "0.11", features = ["password"] }
+indicatif = "0.17"
+humansize = "2"
+futures-util = "0.3"
+ratatui = "0.29"
+crossterm = "0.28"
